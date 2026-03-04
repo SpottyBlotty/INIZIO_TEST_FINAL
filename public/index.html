@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="api-base-url" content="">
+    <title>SERP Scout - Google Export</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-card">
+        <header class="app-header">
+            <div class="brand">
+                <h2>SERP Scout</h2>
+                <span>Inizio test</span>
+            </div> 
+        </header>
+
+        <main class="app-content">
+            <h1>Google SERP Export</h1>
+            
+            <form id="searchForm" class="search-container">
+                <div class="input-wrapper">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="queryInput" placeholder="Enter keyword or phrase..." required>
+                </div>
+                <button type="submit" id="searchBtn">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                </button>
+            </form>
+
+            <div id="status" class="status-badge">Status: Ready</div>
+
+            <div class="table-wrapper">
+                <table id="resultsTable">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Title</th>
+                            <th>URL</th>
+                            <th>Snippet</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+
+            <div class="export-actions">
+                <button id="downloadJsonBtn" class="btn-primary" disabled>Download JSON</button>
+                <button id="downloadCsvBtn" class="btn-outline" disabled>Download CSV</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
