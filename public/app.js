@@ -27,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             statusDiv.textContent = `Status: Found ${data.results.length} results`;
             downloadCsvBtn.disabled = false;
+            downloadCsvBtn.disabled = false;
+downloadJsonBtn.disabled = false; // Добавь вот это!
         } catch (err) {
             statusDiv.textContent = "Status: Error";
         }
@@ -46,4 +48,5 @@ document.addEventListener('DOMContentLoaded', () => {
         a.download = "results.csv";
         a.click();
     });
+
 });
