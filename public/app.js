@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
             statusDiv.textContent = `Status: Found ${data.results.length} results`;
             downloadCsvBtn.disabled = false;
             downloadCsvBtn.disabled = false;
-downloadJsonBtn.disabled = false; // Добавь вот это!
+downloadJsonBtn.disabled = false; 
         } catch (err) {
             statusDiv.textContent = "Status: Error";
         }
@@ -50,3 +50,4 @@ downloadJsonBtn.disabled = false; // Добавь вот это!
     });
 
 });
+
