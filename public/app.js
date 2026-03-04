@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusDiv = document.getElementById('status');
     const resultsTableBody = document.querySelector('#resultsTable tbody');
     const downloadCsvBtn = document.getElementById('downloadCsvBtn');
+    const downloadJsonBtn = document.getElementById('downloadJsonBtn');
 
     let lastData = null;
 
@@ -26,9 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
             `).join('');
 
             statusDiv.textContent = `Status: Found ${data.results.length} results`;
+            
             downloadCsvBtn.disabled = false;
-            downloadCsvBtn.disabled = false;
-downloadJsonBtn.disabled = false; 
+            downloadJsonBtn.disabled = false; 
         } catch (err) {
             statusDiv.textContent = "Status: Error";
         }
@@ -49,5 +50,16 @@ downloadJsonBtn.disabled = false;
         a.click();
     });
 
-});
+    downloadJsonBtn.addEventListener('click', () => {
+        if (!lastData) return;
 
+        const jsonString = JSON.stringify(lastData, null, 2);
+        const blob = new Blob([jsonString], { type: 'application/json' });
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "results.json";
+        a.click();
+        window.URL.revokeObjectURL(url);
+    });
+});
